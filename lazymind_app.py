@@ -16,24 +16,7 @@ st.markdown(
 
 st.divider()
 
-# --- MODEL SELECTOR ---
-MODELS = {
-    "Claude 3.5 Haiku": "anthropic/claude-3-5-haiku",
-    "Claude 3.5 Sonnet": "anthropic/claude-3-5-sonnet",
-    "Claude 3 Opus": "anthropic/claude-3-opus",
-    "GPT-4o Mini": "openai/gpt-4o-mini",
-    "GPT-4o": "openai/gpt-4o",
-    "Gemini 2.0 Flash": "google/gemini-2.0-flash-001",
-    "Gemini 1.5 Pro": "google/gemini-pro-1.5",
-    "Llama 3.3 70B": "meta-llama/llama-3.3-70b-instruct",
-    "Mistral Small": "mistralai/mistral-small",
-    "DeepSeek R1": "deepseek/deepseek-r1",
-}
-
-selected_label = st.selectbox("Judge model (evaluates the response)", list(MODELS.keys()))
-selected_model = MODELS[selected_label]
-
-st.divider()
+JUDGE_MODEL = "google/gemini-2.0-flash-exp:free"
 
 # --- INPUT ---
 task = st.text_area(
@@ -95,14 +78,14 @@ if run:
     if not task or not response:
         st.error("Please enter both a task and a model response.")
     else:
-        with st.spinner(f"Analysing with {selected_label}..."):
+        with st.spinner("Analysing response across three laziness levels..."):
             try:
                 client = OpenAI(
                     api_key=st.secrets["OPENROUTER_API_KEY"],
                     base_url="https://openrouter.ai/api/v1",
                 )
                 message = client.chat.completions.create(
-                    model=selected_model,
+                    model=JUDGE_MODEL,
                     max_tokens=1000,
                     messages=[{
                         "role": "user",
@@ -115,7 +98,6 @@ if run:
 
                 st.session_state.history.append({
                     "task": task[:60] + "..." if len(task) > 60 else task,
-                    "model": selected_label,
                     "score": score,
                     "explanation": result["overall_explanation"]
                 })
@@ -176,12 +158,10 @@ if st.session_state.history:
     st.divider()
     st.subheader("Session history")
     for item in reversed(st.session_state.history):
-        col1, col2, col3 = st.columns([4, 2, 1])
+        col1, col2 = st.columns([4, 1])
         with col1:
             st.caption(item["task"])
         with col2:
-            st.caption(item.get("model", ""))
-        with col3:
             if item["score"] >= 8:
                 st.success(f"{item['score']}/10")
             elif item["score"] >= 5:
