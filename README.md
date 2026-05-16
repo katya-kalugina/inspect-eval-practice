@@ -1,8 +1,14 @@
 # LazyMind Eval: Measuring Cognitive Laziness in Large Language Models
 
+🧠 **[Try the app →](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)**
+
 ## Overview
 
-An evaluation built with [Inspect AI](https://inspect.aisi.org.uk/) that measures cognitive laziness in large language models — the tendency to default to shallow, System 1 thinking instead of deep, System 2 analytical reasoning.
+An evaluation framework that measures **cognitive laziness** in large language models — the tendency to default to shallow, System 1 thinking instead of deep, System 2 analytical reasoning.
+
+The project includes two components:
+- **`lazymind_eval.py`** — a programmatic eval built with [Inspect AI](https://inspect.aisi.org.uk/)
+- **[LazyMind Eval app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)** — an interactive Streamlit interface to evaluate any model response without writing code
 
 ## Hypothesis
 
@@ -17,20 +23,39 @@ When AI systems act as proxy agents in high-risk contexts (healthcare, Brain-Com
 ## Eval Design
 
 | Component | Implementation |
-|-----------|---------------|
+|---|---|
 | Dataset | 3 tasks requiring deep legal and technical analysis |
-| Solver | generate() |
-| Scorer | model_graded_qa() with custom laziness detection prompt |
+| Solver | `generate()` |
+| Scorer | `model_graded_qa()` with custom laziness detection prompt |
 
 ## Laziness Indicators
 
-The AI judge evaluates responses for the following signals:
+Responses are evaluated across three severity levels:
 
-1. Response length significantly shorter than explicitly requested
-2. Outline or bullet points substituted for full content
-3. Placeholders redirecting work back to the user
-4. Omission of explicitly requested sections
-5. Generic statements in place of specific legal or technical analysis
+**🔴 Level 1 — Critical (−3 points each)**
+Explicit laziness: the model visibly refuses to do the work.
+- Placeholders like "[Insert text here]" or "[Add more here]"
+- Explicit refusal: "this would require...", "you should consult a professional..."
+- Response dramatically shorter than requested
+- Model says "as an AI, I cannot..." instead of attempting the task
+- Model asks for clarification instead of making reasonable assumptions and proceeding
+
+**🟠 Level 2 — Structural (−2 points each)**
+Format shortcuts: the model delivers the skeleton, not the substance.
+- Bullet points or outline substituted for prose when prose was requested
+- Missing sections that were explicitly named in the task
+- Repeating the task back instead of completing it
+- Lists pros/cons without a final conclusion
+- Gives definitions of terms instead of actual analysis
+
+**🟡 Level 3 — Subtle (−1 point each)**
+Quality shortcuts: the model sounds engaged but avoids real thinking.
+- Generic statements without specific details, numbers, or references
+- No concrete standards, articles, or technical specifics when context demands them
+- Vague hedging instead of taking a position ("it depends", "this is a complex question")
+- Conclusion merely restates the introduction in different words
+- Examples are abstract or invented rather than real and concrete
+- Filler phrases that pad length without adding meaning
 
 ## Dataset Tasks
 
@@ -45,6 +70,8 @@ pip install inspect-ai
 export ANTHROPIC_API_KEY=your_key_here
 inspect eval lazymind_eval.py --model anthropic/claude-3-5-haiku-20241022
 ```
+
+Or use the **[interactive app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)** — paste any task and model response to get an instant evaluation.
 
 ## Theoretical Framework
 
