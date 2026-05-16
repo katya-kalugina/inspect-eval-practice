@@ -16,7 +16,7 @@ st.markdown(
 
 st.divider()
 
-JUDGE_MODEL = "google/gemini-2.0-flash-exp:free"
+JUDGE_MODEL = "openrouter/free"
 
 # --- INPUT ---
 task = st.text_area(
