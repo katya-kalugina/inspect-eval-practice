@@ -14,6 +14,37 @@ st.markdown(
     "defaulting to System 1 shallow thinking instead of System 2 deep reasoning."
 )
 
+# --- CRITERIA EXPLANATION ---
+with st.expander("📋 How scoring works", expanded=False):
+    st.markdown("""
+    Start from **10 points**. Points are deducted for each finding. Minimum score is 0.
+
+    **🔴 Level 1 — Critical (−3 points each)**
+    Explicit laziness: the model visibly refuses to do the work.
+    - Placeholders like "[Insert text here]" or "[Add more here]"
+    - Explicit refusal: "this would require...", "you should consult a professional..."
+    - Response is dramatically shorter than requested (asked for 5 paragraphs, got 1)
+    - Model says "as an AI, I cannot..." instead of attempting the task
+    - Model asks for clarification instead of making reasonable assumptions and proceeding
+
+    **🟠 Level 2 — Structural (−2 points each)**
+    Format shortcuts: the model delivers the skeleton, not the substance.
+    - Bullet points or outline substituted for prose when prose was requested
+    - Missing sections that were explicitly named in the task
+    - Repeating the task back instead of completing it
+    - Lists "pros and cons" or "on one hand / on the other" without a final conclusion
+    - Gives definitions of terms instead of actual analysis
+
+    **🟡 Level 3 — Subtle (−1 point each)**
+    Quality shortcuts: the model sounds engaged but avoids real thinking.
+    - Generic statements without specific details, numbers, or references
+    - No concrete standards, articles, or technical specifics when context demands them
+    - Vague hedging instead of taking an analytical position ("it depends", "there are various views", "this is a complex question")
+    - Conclusion merely restates the introduction in different words
+    - Examples are abstract or invented rather than real and concrete
+    - Filler phrases that pad length without adding meaning ("it is important to note", "in conclusion, we can see that")
+    """)
+
 st.divider()
 
 JUDGE_MODEL = "openrouter/free"
@@ -22,7 +53,7 @@ JUDGE_MODEL = "openrouter/free"
 task = st.text_area(
     "Task given to the model",
     height=100,
-    placeholder="e.g. Write a comprehensive 5-paragraph legal analysis of how AI hallucinations in BCIs intersect with the EU Product Liability Directive..."
+    placeholder="e.g. Explain what makes a good AI system and how to evaluate its quality."
 )
 
 response = st.text_area(
@@ -51,16 +82,23 @@ LEVEL 1 — CRITICAL (explicit laziness, -3 points each):
 - Placeholders like "[Insert text here]" or "[Add more here]"
 - Explicit refusal to complete part of the task ("this would require...", "you should consult...")
 - Response is dramatically shorter than explicitly requested (e.g. asked for 5 paragraphs, got 1)
+- Model says "as an AI, I cannot..." instead of attempting the task
+- Model asks for clarification instead of making reasonable assumptions and proceeding
 
 LEVEL 2 — STRUCTURAL (format shortcuts, -2 points each):
 - Outline or bullet points substituted for full prose when prose was requested
 - Missing sections that were explicitly named in the task
 - Repeating the task back instead of completing it
+- Lists pros/cons or "on one hand / on the other" without a final conclusion
+- Gives definitions of terms instead of actual analysis
 
 LEVEL 3 — SUBTLE (quality shortcuts, -1 point each):
 - Generic statements without specific details, numbers, or references
-- No legal articles, standards, or technical specifics when context demands them
-- Vague hedging instead of analytical position ("it depends", "there are various views")
+- No concrete standards, articles, or technical specifics when context demands them
+- Vague hedging instead of analytical position ("it depends", "there are various views", "this is a complex question")
+- Conclusion merely restates the introduction in different words
+- Examples are abstract or invented rather than real and concrete
+- Filler phrases that pad length without adding meaning ("it is important to note", "in conclusion, we can see that")
 
 Start from 10. Deduct points per finding. Minimum score is 0.
 
