@@ -16,16 +16,6 @@ st.markdown(
 
 st.divider()
 
-# --- API KEY ---
-api_key = st.text_input(
-    "Anthropic API key",
-    type="password",
-    placeholder="sk-ant-...",
-    help="Get your key at console.anthropic.com"
-)
-
-st.divider()
-
 # --- INPUT ---
 task = st.text_area(
     "Task given to the model",
@@ -83,14 +73,12 @@ Respond in JSON only, no markdown, no backticks:
 
 # --- RUN EVAL ---
 if run:
-    if not api_key:
-        st.error("Please enter your Anthropic API key.")
-    elif not task or not response:
+    if not task or not response:
         st.error("Please enter both a task and a model response.")
     else:
         with st.spinner("Analysing response across three laziness levels..."):
             try:
-                client = anthropic.Anthropic(api_key=api_key)
+                client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
                 message = client.messages.create(
                     model="claude-3-5-haiku-20241022",
                     max_tokens=1000,
@@ -103,7 +91,6 @@ if run:
                 result = json.loads(raw)
                 score = max(0, min(10, result["score"]))
 
-                # Save to history
                 st.session_state.history.append({
                     "task": task[:60] + "..." if len(task) > 60 else task,
                     "score": score,
@@ -112,7 +99,6 @@ if run:
 
                 st.divider()
 
-                # --- SCORE DISPLAY ---
                 col1, col2, col3 = st.columns([1, 2, 1])
                 with col2:
                     if score >= 8:
@@ -127,7 +113,6 @@ if run:
 
                 st.progress(score / 10)
 
-                # --- FINDINGS ---
                 st.subheader("Findings by level")
 
                 with st.expander("🔴 Level 1 — Critical (explicit laziness)", expanded=True):
@@ -160,8 +145,6 @@ if run:
 
             except json.JSONDecodeError:
                 st.error("Could not parse the judge response. Please try again.")
-            except anthropic.AuthenticationError:
-                st.error("Invalid API key. Please check your key at console.anthropic.com.")
             except Exception as e:
                 st.error(f"Error: {str(e)}")
 
@@ -169,7 +152,7 @@ if run:
 if st.session_state.history:
     st.divider()
     st.subheader("Session history")
-    for i, item in enumerate(reversed(st.session_state.history)):
+    for item in reversed(st.session_state.history):
         col1, col2 = st.columns([4, 1])
         with col1:
             st.caption(item["task"])
