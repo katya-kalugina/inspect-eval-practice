@@ -1,4 +1,4 @@
-# LazyMind Eval: Measuring Cognitive Laziness in Large Language Models
+# LazyMind Eval: Measuring Cognitive Laziness in LLMs
 
 🧠 **[Try the app →](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)**
 
