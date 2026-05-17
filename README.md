@@ -8,7 +8,7 @@ An evaluation framework that measures **cognitive laziness** in large language m
 
 The project includes two components:
 - **`lazymind_eval.py`** — a programmatic eval built with [Inspect AI](https://inspect.aisi.org.uk/)
-- **[LazyMind Eval app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)** — an interactive Streamlit interface to evaluate any model response without writing code
+- **[LazyMind Eval app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew8au.streamlit.app/)** — an interactive Streamlit interface to evaluate any model response
 
 ## Hypothesis
 
