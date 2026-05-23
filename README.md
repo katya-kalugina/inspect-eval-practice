@@ -14,11 +14,11 @@ The project includes two components:
 
 Based on Kahneman's dual-process theory, LLMs exhibit a systematic bias toward low-effort responses even when tasks explicitly require comprehensive analysis. This eval operationalises "cognitive laziness" as a measurable behavioural pattern.
 
-In high-stakes domains such as law, medicine, and AI governance, this pattern constitutes a robustness defect under the EU AI Act Article 9 requirements for accuracy and reliability.
+In high-stakes domains such as medicine this pattern constitutes a robustness defect under the EU AI Act Article 9 requirements for accuracy and reliability.
 
 ## Relevance to AI Safety
 
-When AI systems act as proxy agents in high-risk contexts (healthcare, Brain-Computer Interfaces, legal analysis), cognitive laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
+When AI systems act as proxy agents in high-risk contexts (healthcare, decoding of brain signals, etc.), agorithmic laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
 
 ## Eval Design
 
