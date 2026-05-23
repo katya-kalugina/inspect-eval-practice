@@ -12,7 +12,7 @@ The project includes two components:
 
 ## Hypothesis
 
-Based on Kahneman's dual-process theory, LLMs exhibit a systematic bias toward low-effort responses even when tasks explicitly require comprehensive analysis. This eval operationalises "cognitive laziness" as a measurable behavioural pattern.
+Based on Kahneman's dual-process theory, LLMs exhibit a systematic bias toward low-effort responses even when tasks explicitly require comprehensive analysis. This eval operationalises "cognitive laziness" as a measurable agorithmic pattern.
 
 In high-stakes domains such as medicine this pattern constitutes a robustness defect under the EU AI Act Article 9 requirements for accuracy and reliability.
 
