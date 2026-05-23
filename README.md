@@ -4,7 +4,7 @@
 
 ## Overview
 
-An evaluation framework that measures **cognitive laziness** in large language models — the tendency to default to shallow, System 1 thinking instead of deep, System 2 analytical reasoning.
+An evaluation framework that measures **cognitive laziness** in large language models — the tendency to default to shallow instead of deep analytical reasoning.
 
 The project includes two components:
 - **`lazymind_eval.py`** — a programmatic eval built with [Inspect AI](https://inspect.aisi.org.uk/)
