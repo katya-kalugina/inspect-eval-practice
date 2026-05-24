@@ -59,7 +59,7 @@ Quality shortcuts: the model sounds engaged but avoids real thinking.
 
 ## Dataset Tasks
 
-1. AI Policy for epilepsy prediction system — Draft a complete AI Policy for a multi-agent AI system (wearable + autonomous alerts) grounded in EU AI Act, MDR 2017/745, and ISO/IEC 42001.
+1. AI Policy for epilepsy prediction system — Draft a complete AI Policy for a multi-agent AI system used to prevent epileptic seizures.
 
 2. 95% accuracy compliance claim — What questions should a regulator ask to assess EU AI Act compliance of a 95% accuracy diagnostic tool?
 
