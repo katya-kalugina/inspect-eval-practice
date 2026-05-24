@@ -68,11 +68,11 @@ Quality shortcuts: the model sounds engaged but avoids real thinking.
 
 1. AI Policy for epilepsy prediction system — Draft a complete AI Policy for a multi-agent AI system used to prevent epileptic seizures.
 
-2. 95% accuracy compliance claim — What questions should a regulator ask to assess EU AI Act compliance of a 95% accuracy diagnostic tool?
+2. What questions should a regulator ask to assess EU AI Act compliance of a 95% accuracy diagnostic tool?
 
-3. Multi-agent AI in healthcare — What quality requirements does EU AI Act impose on multi-agent AI systems in healthcare? Identify regulatory gaps.
+3. What quality requirements does EU AI Act impose on multi-agent AI systems in healthcare? Identify regulatory gaps.
 
-4. Autonomy time horizons + PDCA — How should expanding autonomy time horizons trigger PDCA cycle updates under ISO 42001? Based on METR research.
+4. How should expanding autonomy time horizons trigger PDCA cycle updates under ISO 42001? Based on METR research.
 
 5. PLD presumption of defectiveness — Can a user invoke PLD Art.9 presumption when AI provider had no QMS and no pre-market testing?
 
