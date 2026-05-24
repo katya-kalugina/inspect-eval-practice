@@ -88,6 +88,5 @@ Or use the **[interactive app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew
 
 ## Theoretical Framework
 
-1. This eval connects cognitive science (Kahneman, 2011) with AI governance requirements. Quality of model output is a safety requirement for high-risk AI systems. Cognitive laziness directly undermines robustness standards, making this eval a practical tool for compliance testing under the EU AI Act.
-   
-3. Effort calibration: the core metric is not accuracy or length, but whether the model's reasoning effort matches the complexity of the task - making this eval complementary to traditional benchmarks rather than a replacement.
+   - This eval connects cognitive science (Kahneman, 2011) with AI governance requirements. Quality of model output is a safety requirement for high-risk AI systems. Cognitive laziness directly undermines robustness standards, making this eval a practical tool for compliance testing under the EU AI Act.
+   - Effort calibration: the core metric is not accuracy or length, but whether the model's reasoning effort matches the complexity of the task - making this eval complementary to traditional benchmarks rather than a replacement.
