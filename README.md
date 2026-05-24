@@ -26,7 +26,7 @@ When AI systems act as proxy agents in high-risk contexts (healthcare, decoding 
 |---|---|
 | Dataset | 5 tasks requiring deep legal and technical analysis(EU AI Act, MDR, PLD, ISO 42001)|
 | Solver | `generate()` |
-| Scorer | `model_graded_qa()` with custom laziness detection prompt |
+| Scorer | Custom `laziness_scorer()` with three-level scoring (0-10) |
 
 ## Laziness Indicators
 
