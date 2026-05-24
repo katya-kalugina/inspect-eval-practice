@@ -12,13 +12,20 @@ The project includes two components:
 
 ## Hypothesis
 
-Based on Kahneman's dual-process theory, LLMs exhibit a systematic bias toward low-effort responses even when tasks explicitly require comprehensive analysis. This eval operationalises "cognitive laziness" as a measurable agorithmic pattern.
+Based on Kahneman's dual-process theory, LLMs exhibit a systematic bias toward low-effort responses even when tasks explicitly require comprehensive analysis. This eval operationalises "cognitive laziness" as a measurable  behavioural pattern — specifically, the failure to calibrate effort to task 
+complexity (effort miscalibration).
 
-In high-stakes domains such as medicine this pattern constitutes a robustness defect under the EU AI Act Article 9 requirements for accuracy and reliability.
+Traditional quality metrics such as accuracy and completeness measure what a model says, but not how deeply it reasons. A model can produce a factually correct response through shallow pattern-matching rather than genuine analysis. Cognitive laziness captures this gap.
+
+In high-stakes domains such as medicine this pattern may constitute a robustness defect under the EU AI Act Article 9 requirements for accuracy and reliability.
 
 ## Relevance to AI Safety
 
-When AI systems act as proxy agents in high-risk contexts (healthcare, decoding of brain signals, etc.), agorithmic laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
+When AI systems applied in high-risk contexts (healthcare, decoding of brain signals, etc.), cognitive laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
+
+Under EU AI Act Article 9, high-risk AI systems must meet robustness and accuracy requirements. A model that systematically avoids deep reasoning cannot reliably support  high-stakes regulatory or clinical decisions.
+
+Note: laziness may also be caused by technical constraints (token limits, RLHF alignment, operator system prompts) rather than model capability alone. This eval measures the behavioural outcome — shallow responses — without distinguishing its root cause.
 
 ## Eval Design
 
@@ -81,4 +88,6 @@ Or use the **[interactive app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew
 
 ## Theoretical Framework
 
-This eval connects cognitive science (Kahneman, 2011) with AI governance requirements. Quality of model output is not merely a performance metric — it is a legal and safety requirement for high-risk AI systems. Cognitive laziness directly undermines robustness standards, making this eval a practical tool for compliance testing under the EU AI Act.
+1. This eval connects cognitive science (Kahneman, 2011) with AI governance requirements. Quality of model output is a safety requirement for high-risk AI systems. Cognitive laziness directly undermines robustness standards, making this eval a practical tool for compliance testing under the EU AI Act.
+   
+3. Effort calibration: the core metric is not accuracy or length, but whether the model's reasoning effort matches the complexity of the task - making this eval complementary to traditional benchmarks rather than a replacement.
