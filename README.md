@@ -90,3 +90,13 @@ Or use the **[interactive app](https://inspect-eval-practice-2uo2b2xqjey9jmqrxew
 
    - This eval connects cognitive science (Kahneman, 2011) with AI governance requirements. Quality of model output is a safety requirement for high-risk AI systems. Cognitive laziness directly undermines robustness standards, making this eval a practical tool for compliance testing under the EU AI Act.
    - Effort calibration: the core metric is not accuracy or length, but whether the model's reasoning effort matches the complexity of the task - making this eval complementary to traditional benchmarks rather than a replacement.
+
+---
+
+![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)
+
+<small>
+Copyright (c) 2024-2026 Ekaterina Kalugina.
+
+The content of this repository are licensed under the [CC BY-NC-SA 4.0](./LICENSE) license. 
+<small>
