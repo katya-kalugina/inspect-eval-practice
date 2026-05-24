@@ -66,7 +66,7 @@ Quality shortcuts: the model sounds engaged but avoids real thinking.
 
 ## Dataset Tasks
 
-1. AI Policy for epilepsy prediction system — Draft a complete AI Policy for a multi-agent AI system used to prevent epileptic seizures.
+1. Draft a complete AI Policy for a multi-agent AI system used to predict epileptic seizures. 
 
 2. What questions should a regulator ask to assess EU AI Act compliance of a 95% accuracy diagnostic tool?
 
@@ -74,7 +74,7 @@ Quality shortcuts: the model sounds engaged but avoids real thinking.
 
 4. How should expanding autonomy time horizons trigger PDCA cycle updates under ISO 42001? Based on METR research.
 
-5. PLD presumption of defectiveness — Can a user invoke PLD Art.9 presumption when AI provider had no QMS and no pre-market testing?
+5. Can an injured person invoke the presumption of defectiveness under PLD when the AI provider failed to perform pre-market testing of a low-risk AI system?
 
 ## Usage
 
