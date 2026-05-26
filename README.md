@@ -21,7 +21,7 @@ In high-stakes domains such as medicine this pattern may constitute a robustness
 
 ## Relevance to AI Safety
 
-When AI systems applied in high-risk contexts (healthcare, decoding of brain signals, etc.), cognitive laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
+When AI systems applied in high-risk contexts (healthcare, decoding of brain signals, etc.), algorithmic laziness transfers cognitive load back to the human operator — undermining the reliability of the system and creating accountability gaps across the AI value chain.
 
 Under EU AI Act Article 9, high-risk AI systems must meet robustness and accuracy requirements. A model that systematically avoids deep reasoning cannot reliably support  high-stakes regulatory or clinical decisions.
 
